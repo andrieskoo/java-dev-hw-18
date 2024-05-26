@@ -54,7 +54,7 @@ public class NoteService {
                 noteRepository.delete(del);
                 return ResponseEntity.ok().build();
             }
-            return ResponseEntity.notFound().eTag("User is not author of noteeee").build();
+            return ResponseEntity.notFound().eTag("User is not author of note.").build();
         }
         return ResponseEntity.badRequest().eTag("User is not author of note.").build();
 
