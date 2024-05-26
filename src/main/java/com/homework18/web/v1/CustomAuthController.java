@@ -9,9 +9,12 @@ import com.homework18.model.Role;
 import com.homework18.model.User;
 import com.homework18.repository.RoleRepository;
 import com.homework18.repository.UserRepository;
+import com.homework18.security.jwt.AuthEntryPointJwt;
 import com.homework18.security.jwt.JwtUtils;
 import com.homework18.security.service.UserDetailsImpl;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -31,6 +34,8 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/v1/auth")
 public class CustomAuthController {
+    private static final Logger logger = LoggerFactory.getLogger(CustomAuthController.class);
+
     @Autowired
     AuthenticationManager authenticationManager;
 
